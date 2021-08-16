@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logs",
+  "info": {
+    "name": "log"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "screen_num": {
+      "type": "integer"
+    },    
+    "ip_address": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "stacktrace": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "datetime"
+    }
+  }
+}
