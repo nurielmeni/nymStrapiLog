@@ -9,7 +9,7 @@ const { sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
   async create(ctx) {
-    console.log(ctx.request.body);
+    console.log("Body", ctx.request.body);
     entity = await strapi.services.logs.create(ctx.request.body);
     return sanitizeEntity(entity, { model: strapi.models.logs });
   },
