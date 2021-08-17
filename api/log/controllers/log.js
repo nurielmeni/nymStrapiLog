@@ -8,7 +8,16 @@
 module.exports = {
   async create(ctx) {
     const { logs } = ctx.request.body;
+    if (Array.isArray(logs)) {
+      await Promise.all(
+        logs.map(async (log) => {
+          await strapi.services.log.create(log);
+        })
+      );
 
-    const entity = await strapi.services.log.create(logs[0]);
+      return `${logs.length} log entries created.`;
+    }
+
+    return "Accept only array to craete logs.";
   },
 };
