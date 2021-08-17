@@ -5,8 +5,10 @@
  * to customize this controller
  */
 
-export async function create(ctx) {
-  const { logs } = ctx.request.body;
+module.exports = {
+  async create(ctx) {
+    const { logs } = ctx.request.body;
 
-  const entity = await strapi.services.log.create(logs[0]);
-}
+    const entity = await strapi.services.log.create(logs[0]);
+  },
+};
